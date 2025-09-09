@@ -21,7 +21,7 @@ def logo():
 ...::........::..:::::..::........::::::::..:::::........::..:::::..::..:::::..::
 """
     print(logo)
-    print("credits to 3xecutablefile, Navel.exe, Destroyer.exe, Surgeon.exe and Atlas.exe")
+    print("credits to 3xecutablefile AND navel.exe")
 
 def encrypt_aes_key(public_key, aes_key):
     encrypted_aes_key = public_key.encrypt(
